@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Onoriode Lukey - Automation Engineer & Virtual Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s;
+        }
+
+        .header .tagline {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .header .location {
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #764ba2;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        /* About Section */
+        .about {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Projects Section */
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .project-card h3 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .project-card .project-meta {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .project-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .project-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #667eea;
+        }
+
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            color: #555;
+        }
+
+        .skill-category li:before {
+            content: "▸";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            opacity: 0.9;
+            word-break: break-all;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Emmanuel Onoriode Lukey</h1>
+            <p class="tagline">Automation Engineer | Virtual Assistant | AI Integration Specialist</p>
+            <p class="location">📍 Lagos, Nigeria</p>
+            <div class="status-badge">🟢 Open to Opportunities</div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- About Section -->
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="about">
+                    <p>
+                        I'm a passionate Automation Engineer and Virtual Assistant based in Lagos, Nigeria, specializing in building intelligent systems that solve real business problems. With expertise in n8n workflow automation, AI integration, and API development, I create solutions that streamline operations and drive efficiency.
+                    </p>
+                    <p>
+                        My approach combines technical expertise with a deep understanding of business needs. I don't just build automation—I build systems that make businesses run smoother, faster, and smarter. From AI-powered chatbots to complex workflow orchestration, I turn repetitive tasks into seamless, automated processes.
+                    </p>
+                    <p>
+                        Currently seeking opportunities in Automation Engineering, AI Integration, Backend Development, and Full-Stack roles where I can leverage my skills to create impactful solutions.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <h2>Featured Projects</h2>
+                
+                <!-- Project 1: Flavor Haven -->
+                <div class="project-card">
+                    <h3>🍽️ Flavor Haven - AI Restaurant Ordering Bot</h3>
+                    <p class="project-meta">AI-Powered Conversational Commerce | Nov 2024</p>
+                    
+                    <p>
+                        An intelligent restaurant ordering system that processes orders through natural conversation on Telegram. The bot understands natural language, manages a complete menu system, calculates pricing with tax and delivery fees, and handles the entire checkout flow—all without human intervention.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">Groq AI</span>
+                        <span class="tech-tag">Telegram Bot API</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Llama 3.1</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+
+                    <h4 style="margin-top: 20px; color: #667eea;">Key Features:</h4>
+                    <ul class="project-features">
+                        <li>Natural language understanding - "I want a burger" vs button clicks</li>
+                        <li>25+ menu items across 4 categories with descriptions and pricing</li>
+                        <li>Smart cart management with quantity tracking</li>
+                        <li>Automated price calculation (subtotal + 8% tax + delivery)</li>
+                        <li>Complete checkout flow from browsing to delivery confirmation</li>
+                        <li>Dual response system: AI for natural language, direct for commands</li>
+                        <li>Session management for multiple concurrent users</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px; color: #667eea;">Results & Impact:</h4>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <div class="stat-number">&lt;2s</div>
+                            <div class="stat-label">Response Time</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Order Accuracy</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Availability</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Concurrent Users</div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px;">
+                        <strong>Business Value:</strong> This solution eliminates 90%+ of order errors, operates 24/7 without human intervention, and can scale to thousands of users instantly. Potential cost savings of $2000+/month for restaurants by reducing staffing needs while increasing order accuracy and customer satisfaction.
+                    </p>
+                </div>
+
+                <!-- Placeholder for Next Project -->
+                <div class="project-card" style="border-left-color: #ddd; opacity: 0.7;">
+                    <h3>🔜 Next Project Coming Soon</h3>
+                    <p class="project-meta">Currently in Development</p>
+                    <p>
+                        Working on new automation solutions. Stay tuned for updates on AI-powered business process automation, intelligent document processing, or customer support systems.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2>Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>🤖 Automation & AI</h3>
+                        <ul>
+                            <li>n8n Workflow Automation</li>
+                            <li>Groq AI Integration</li>
+                            <li>AI Prompt Engineering</li>
+                            <li>Natural Language Processing</li>
+                            <li>Chatbot Development</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>💻 Development</h3>
+                        <ul>
+                            <li>JavaScript (ES6+)</li>
+                            <li>API Integration</li>
+                            <li>RESTful APIs</li>
+                            <li>Webhook Development</li>
+                            <li>JSON Data Processing</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>🔧 Tools & Platforms</h3>
+                        <ul>
+                            <li>Telegram Bot API</li>
+                            <li>GitHub</li>
+                            <li>Google Workspace</li>
+                            <li>Notion</li>
+                            <li>Airtable</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>📊 Business & Soft Skills</h3>
+                        <ul>
+                            <li>Problem Solving</li>
+                            <li>Process Optimization</li>
+                            <li>Virtual Assistance</li>
+                            <li>Project Management</li>
+                            <li>Client Communication</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Let's Connect</h2>
+                <p style="margin-bottom: 30px; color: #555; font-size: 1.1em;">
+                    I'm actively looking for opportunities in Automation Engineering, AI Integration, Backend Development, and Virtual Assistant roles. Open to remote work and based in Lagos, Nigeria.
+                </p>
+                
+                <div class="contact-grid">
+                    <a href="mailto:lukeyemmanuel@gmail.com" class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>lukeyemmanuel@gmail.com</p>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/emmanuel-lukey-b0aa7781" target="_blank" class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <h3>LinkedIn</h3>
+                        <p>Connect with me</p>
+                    </a>
+
+                    <a href="https://github.com/lukeyemmanuel" target="_blank" class="contact-card">
+                        <div class="contact-icon">🐙</div>
+                        <h3>GitHub</h3>
+                        <p>View my code</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Emmanuel Onoriode Lukey. All rights reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Built with passion in Lagos, Nigeria 🇳🇬</p>
+        </footer>
+    </div>
+</body>
+</html>
